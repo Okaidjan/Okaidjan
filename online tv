@@ -148,29 +148,3 @@ videoPlayer.addEventListener('ended', () => {
         videoPlayer.play();
     }
 });
-```
-
-*Functionality:*
-
-1. Video player with controls
-2. Dynamic video thumbnails
-3. Clicking on thumbnail plays corresponding video
-4. Video player plays next video in the list after current video ends
-
-*Additional Features:*
-
-1. Live streaming integration
-2. User authentication and authorization
-3. Video categorization and filtering
-4. Search functionality
-5. Responsive design
-
-*Tools and Resources:*
-
-1. HTML5 Video API
-2. CSS Flexbox
-3. JavaScript (ES6+)
-4. Video.js (optional)
-5. Font Awesome (optional)
-
-This is just a basic outline to get you started. You'll need to customize and extend this code to fit your specific requirements.
