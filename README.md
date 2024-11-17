@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Okaidjan
+⁸- 👋 Hi, I’m @Okaidjan
 - 👀 I’m interested in choral music
 - 🌱 I’m currently learning systems engineering 
 - 💞️ I’m looking to collaborate on networking and programming 
@@ -59,62 +59,64 @@ Here's a simple online form using HTML, CSS, and JavaScript for Ampekrom M/A Bas
 ```
 *CSS (style.css)*
 ```
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
+- uses: actions/setup-node@v4
+  with:
+    # Version Spec of the version to use in SemVer notation.
+    # It also admits such aliases as lts/*, latest, nightly and canary builds
+    # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
+    node-version: ''
 
-header {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-}
+    # File containing the version Spec of the version to use.  Examples: package.json, .nvmrc, .node-version, .tool-versions.
+    # If node-version and node-version-file are both provided the action will use version from node-version. 
+    node-version-file: ''
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+    # Set this option if you want the action to check for the latest available version 
+    # that satisfies the version spec.
+    # It will only get affect for lts Nodejs versions (12.x, >=10.15.0, lts/Hydrogen). 
+    # Default: false
+    check-latest: false
 
-form {
-    width: 50%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
+    # Default: ''. The action use system architecture by default 
+    architecture: ''
 
-label {
-    display: block;
-    margin-bottom: 10px;
-}
+    # Used to pull node distributions from https://github.com/actions/node-versions. 
+    # Since there's a default, this is typically not supplied by the user. 
+    # When running this action on github.com, the default value is sufficient. 
+    # When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
+    #
+    # We recommend using a service account with the least permissions necessary. Also
+    # when generating a new PAT, select the least scopes necessary.
+    #
+    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    #
+    # Default: ${{ github.server_url == 'https://github.com' && github.token || '' }}
+    token: ''
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-}
+    # Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm.
+    # Package manager should be pre-installed
+    # Default: ''
+    cache: ''
 
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. 
+    # It will generate hash from the target file for primary key. It works only If cache is specified.  
+    # Supports wildcards or a list of file names for caching multiple dependencies.
+    # Default: ''
+    cache-dependency-path: ''
 
-button[type="submit"]:hover {
-    background-color: #3e8e41;
-}
+    # Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, 
+    # and set up auth to read in from env.NODE_AUTH_TOKEN.
+    # Default: ''
+    registry-url: ''
 
-footer {
-    text-align: center;
-    padding: 20px;
-}
-```
+    # Optional scope for authenticating against scoped registries. 
+    # Will fall back to the repository owner when using the GitHub Packages registry (https://npm.pkg.github.com/).
+    # Default: ''
+    scope: ''
+
+    # Set always-auth option in npmrc file.
+    # Default: ''
+    always-auth: ''
 *JavaScript (script.js)*
 ```
 const form = document.getElementById('ampekrom-form');
@@ -130,32 +132,4 @@ form.addEventListener('submit', (e) => {
     console.log('Form submitted:', { name, email, phone, message });
 });
 ```
-*Linking to GitHub Repository*
 
-In the HTML file, I added a link to your GitHub repository in the footer section:
-```
-<footer>
-    <p>View our GitHub repository: <a href="(link unavailable)">Ampekrom M/A Basic</a></p>
-</footer>
-```
-*Next Steps*
-
-1. Create a new folder for your project and add the HTML, CSS, and JavaScript files.
-2. Open the `index.html` file in a web browser to test the form.
-3. Customize the form fields and styles as needed.
-4. Add your form submission logic in the `script.js` file.
-
-*Hosting Options*
-
-To make your form accessible online, consider hosting options like:
-
-1. GitHub Pages
-2. Netlify
-3. Vercel
-4. Firebase Hosting
-
-Let me know if you need further assistance or have questions!
-<!---
-Okaidjan/Okaidjan is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
